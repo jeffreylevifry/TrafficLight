@@ -1,7 +1,7 @@
 <template>
     <div id="secure">
         <SingleLight id="SmallFormat" status="" machine="Small Format" subtext="Small Format"
-                     v-on:change-color="changeSF" v-bind:style="{ backgroundColor: this.$store.state.sf.backgroundColor }"></SingleLight>
+                     v-on:change-color="changeSF" v-bind:style="{ backgroundColor: sf.backgroundColor }"></SingleLight>
         <!---
     <SingleLight id="6100" status="" machine="HP z6100" subtext="Large Format"
                  v-on:change-color="change6100"v-bind:style="{ backgroundColor: hpz.backgroundColor}"></SingleLight>
@@ -17,7 +17,8 @@
 
 <script>
 import SingleLight from "../components/SingleLight.vue";
-//import { db } from "./firebase";
+import {db} from "../firebase";
+
 
 export default {
   name: "Secure",
@@ -28,22 +29,37 @@ export default {
 
   data() {
     return {
+      sf:{backgroundColor:""},
       hpz: { backgroundColor: "" },
       latex: { backgroundColor: "" },
       flatbed: { backgroundColor: "" },
       finishing: { backgroundColor: "" }
+      
     };
   },
 
   methods: {
     changeSF: function(newColor) {
-      // console.log("sf.backgroundColor = " + this.$data.sf.backgroundColor);
-      //   this.$store.commit('changeSF',newColor);
+      this.$data.sf.backgroundColor = newColor;
+
+      console.log(db.get().then(doc => {
+      if (!doc.exists) {
+        console.log('No such document!');
+      } else {
+        console.log('Document data:', doc.data());
+      }
+   })
+    .catch(err => {
+      console.log('Error getting document', err);
+    }));
+          // console.log("sf.backgroundColor = " + this.$data.sf.backgroundColor);
+      // this.$store.commit('changeSF',newColor);
       // computed.sfBgGet();
       // this.$store.state.sf.backgroundColor = newColor;
-      //this.$data.sf.backgroundColor = newColor;
+      
       //this.$root.$emit('changeSFSignal');
     },
+    
     change6100: function(newColor) {
       // store.changeHpx(newColor);
     },
