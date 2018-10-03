@@ -17,7 +17,7 @@
 
 <script>
 import SingleLight from "../components/SingleLight.vue";
-import {db} from "../firebase";
+import {lanes} from "../firebase";
 
 
 export default {
@@ -41,17 +41,7 @@ export default {
   methods: {
     changeSF: function(newColor) {
       this.$data.sf.backgroundColor = newColor;
-
-      console.log(db.get().then(doc => {
-      if (!doc.exists) {
-        console.log('No such document!');
-      } else {
-        console.log('Document data:', doc.data());
-      }
-   })
-    .catch(err => {
-      console.log('Error getting document', err);
-    }));
+      console.log(lanes);
           // console.log("sf.backgroundColor = " + this.$data.sf.backgroundColor);
       // this.$store.commit('changeSF',newColor);
       // computed.sfBgGet();
