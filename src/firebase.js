@@ -5,12 +5,11 @@ const firebaseApp = Firebase.initializeApp({
   // Initialize Firebase
 });
 
-// Export the database for components to use.
-// If you want to get fancy, use mixins or provide / inject to avoid redundant imports.
 const db = firebaseApp.database();
+const sfBg = db.ref("lanes/sf/backgroundColor");
+const hpzBg = db.ref("lanes/hpz/backgroundColor");
+const latexBg = db.ref("lanes/latex/backgroundColor");
+const flatbedBg = db.ref("lanes/flatbed/backgroundColor");
+const finishingBg = db.ref("lanes/finishing/backgroundColor");
 
-// firebase collections
-const lanes = db.ref("lanes");
-//const postsCollection = db.collection('posts');
-
-export { db, lanes };
+export { db, sfBg, hpzBg, latexBg, flatbedBg, finishingBg };

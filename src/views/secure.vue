@@ -2,7 +2,6 @@
     <div id="secure">
         <SingleLight id="SmallFormat" status="" machine="Small Format" subtext="Small Format"
                      v-on:change-color="changeSF" v-bind:style="{ backgroundColor: sf.backgroundColor }"></SingleLight>
-        <!---
     <SingleLight id="6100" status="" machine="HP z6100" subtext="Large Format"
                  v-on:change-color="change6100"v-bind:style="{ backgroundColor: hpz.backgroundColor}"></SingleLight>
     <SingleLight id="360" status="" machine="HP 360 Latex" subtext="Large Format Outdoor"
@@ -11,13 +10,12 @@
                  v-on:change-color="changeFlatbed"v-bind:style="{ backgroundColor: flatbed.backgroundColor}"></SingleLight>
     <SingleLight id="Finishing" status="" machine="Finishing" subtext="Finishing"
                  v-on:change-color="changeFinishing"v-bind:style="{ backgroundColor: finishing.backgroundColor}"></SingleLight>
-        -->
     </div>
 </template>
 
 <script>
 import SingleLight from "../components/SingleLight.vue";
-import {lanes} from "../firebase";
+import {db} from "../firebase";
 
 
 export default {
@@ -41,26 +39,34 @@ export default {
   methods: {
     changeSF: function(newColor) {
       this.$data.sf.backgroundColor = newColor;
-      console.log(lanes);
-          // console.log("sf.backgroundColor = " + this.$data.sf.backgroundColor);
-      // this.$store.commit('changeSF',newColor);
-      // computed.sfBgGet();
-      // this.$store.state.sf.backgroundColor = newColor;
-      
-      //this.$root.$emit('changeSFSignal');
+      db.ref("lanes/sf").set({
+       backgroundColor: newColor
+}); 
     },
     
     change6100: function(newColor) {
-      // store.changeHpx(newColor);
+      this.$data.hpz.backgroundColor = newColor;
+      db.ref("lanes/hpz").set({
+       backgroundColor: newColor
+       });
     },
     change360: function(newColor) {
-      //  store.changeLatex(newColor);
+      this.$data.latex.backgroundColor = newColor;
+      db.ref("lanes/latex").set({
+       backgroundColor: newColor
+       });
     },
     changeFlatbed: function(newColor) {
-      // store.changeFlatbed(newColor);
+      this.$data.flatbed.backgroundColor = newColor;
+      db.ref("lanes/flatbed").set({
+       backgroundColor: newColor
+       });
     },
     changeFinishing: function(newColor) {
-      // store.changeFinishing(newColor);
+      this.$data.finishing.backgroundColor = newColor;
+      db.ref("lanes/finishing").set({
+       backgroundColor: newColor
+       });
     }
   }
 };
