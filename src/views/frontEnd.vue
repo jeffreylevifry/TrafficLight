@@ -1,15 +1,26 @@
 <template>
     <div id="frontEnd">
-        <SingleLightFront id="SmallFormat" status="" machine="Small Format" subtext="Small Format"
-                          v-bind:style="{ backgroundColor: sf.backgroundColor }"></SingleLightFront>
-                    <SingleLightFront id="6100" status="" machine="HP z6100" subtext="Large Format"
-                                 v-bind:style="{ backgroundColor: hpz.backgroundColor }"></SingleLightFront>
-                    <SingleLightFront id="360" status="" machine="HP 360 Latex" subtext="Large Format Outdoor"
-                                 v-bind:style="{ backgroundColor: latex.backgroundColor }"></SingleLightFront>
-                    <SingleLightFront id="Flatbed" status="" machine="Flatbed" subtext="Flatbed"
-                                 v-bind:style="{ backgroundColor: flatbed.backgroundColor }"></SingleLightFront>
-                    <SingleLightFront id="Finishing" status="" machine="Finishing" subtext="Finishing"
-                                 v-bind:style="{ backgroundColor: finishing.backgroundColor }"></SingleLightFront>
+    
+        <SingleLightFront id="SmallFormat" 
+        image="http://jeffreylevifry.com/TrafficLight/assets/TL_SF_ICON.svg" 
+        :status="sfstatus" machine="Small Format" subtext="Small Format"
+         v-bind:style="{ backgroundColor: sf.backgroundColor }"></SingleLightFront>
+         
+        <SingleLightFront id="6100"  image='http://jeffreylevifry.com/TrafficLight/assets/TL_HP6100_ICON.svg' 
+        :status="hpzstatus" machine="HP z6100" subtext="Large Format" 
+        v-bind:style="{ backgroundColor: hpz.backgroundColor }"></SingleLightFront>
+
+        <SingleLightFront id="360" image='http://jeffreylevifry.com/TrafficLight/assets/TL_360_ICON.svg' 
+        :status="latexstatus" machine="HP 360 Latex" subtext="Large Format Outdoor"
+        v-bind:style="{ backgroundColor: latex.backgroundColor }"></SingleLightFront>
+
+        <SingleLightFront id="Flatbed" image="http://jeffreylevifry.com/TrafficLight/assets/TL_350_ICON.svg"
+        :status="flatbedstatus" machine="Flatbed" subtext="Flatbed" 
+        v-bind:style="{ backgroundColor: flatbed.backgroundColor }"></SingleLightFront>
+
+        <SingleLightFront id="Finishing" image="http://jeffreylevifry.com/TrafficLight/assets/TL_FINISHING_ICON.svg"
+        :status="finishingstatus" machine="Finishing" subtext="Finishing" 
+        v-bind:style="{ backgroundColor: finishing.backgroundColor }"></SingleLightFront>
         </div>
     </template>
 
@@ -34,6 +45,7 @@ export default {
       sfBg.on("value",(function(snapshot) {
                  var color1 =  snapshot.val();
                  self.sf.backgroundColor = color1;
+                 self.sfstatus = self.getStatus(color1);
          }));     
       },
       changeHPZ: function() {
@@ -41,6 +53,7 @@ export default {
       hpzBg.on("value",(function(snapshot) {
                  var color1 =  snapshot.val();
                  self.hpz.backgroundColor = color1;
+                 self.hpzstatus = self.getStatus(color1);
          }));     
       },
      changeLATEX: function() {
@@ -48,6 +61,7 @@ export default {
       latexBg.on("value",(function(snapshot) {
                  var color1 =  snapshot.val();
                  self.latex.backgroundColor = color1;
+                 self.latexstatus = self.getStatus(color1);
          }));     
       },
       changeFLATBED: function() {
@@ -55,6 +69,7 @@ export default {
       flatbedBg.on("value",(function(snapshot) {
                  var color1 =  snapshot.val();
                  self.flatbed.backgroundColor = color1;
+                 self.flatbedstatus = self.getStatus(color1);
          }));     
       },
      changeFINISHING: function() {
@@ -62,8 +77,32 @@ export default {
       finishingBg.on("value",(function(snapshot) {
                  var color1 =  snapshot.val();
                  self.finishing.backgroundColor = color1;
+                 self.finishingstatus = self.getStatus(color1);
          }));     
-      }
+      },
+
+    getStatus: function(color){
+      var str1 = color;
+      var red = "red";
+      var blue = "#3fa9f5";
+      var grey = "lightgrey";
+      var green = "#00b058";
+      var yellow = "#ffff00";
+      console.log("color = "+color);
+      if(str1.localeCompare(red)===0){ //red
+        return "HEAVY";
+      }if(str1.localeCompare(blue)===0){ //blue
+      console.log(str1);
+        return "SPECIAL";
+      }if(str1.localeCompare(grey)===0){
+        return "OFFLINE";
+      } if(str1.localeCompare(green)===0){ //green
+        return "LITE";
+      }if(str1.localeCompare(yellow)===0){ //yellow
+        return "MEDIUM";
+      }else{return "ERROR"}
+
+    }
 
     },
 
@@ -77,22 +116,22 @@ export default {
       
     },
 
-    watch:{
-      color1(){
-        console.log("XXXXXnewColor watcher fired");
-      }
-    },
     data() {
 
         return {
-
+          sfstatus:'',
+          hpzstatus:'',
+          latexstatus:'',
+          flatbedstatus:'',
+          finishingstatus:'',
             sf:{backgroundColor: ''},
             hpz:{backgroundColor: ''},
             latex:{backgroundColor: ''},
             flatbed:{backgroundColor: ''},
-            finishing:{backgroundColor: ''},
+            finishing:{backgroundColor: ''}
             }; 
-    }
+    },
+    
 
 
 }

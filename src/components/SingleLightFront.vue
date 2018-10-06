@@ -1,7 +1,8 @@
 
 <template>
     <div class="singleLightFront">
-        <div class="machineHolder">{{ machine }} </div>
+    <div class="imageHolder"><img v-bind:src=image /> </div>    
+        <div class="machineHolder">{{ machine }} <div class="subtextHolder">{{subtext}} </div></div>
         <div class="statusHolder">
             {{ status }}
         </div>
@@ -14,7 +15,8 @@ export default {
   props: {
     status: String,
     machine: String,
-    subtext: String
+    subtext: String,
+    image: String
   }
 };
 </script>
@@ -24,28 +26,53 @@ export default {
 .singleLightFront {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-top: 10px;
   background-color: lightgrey;
   height: 100px;
+  font-size: 35px;
+  color: black;
+}
+
+.imageHolder{
+  float: left;
+  padding-left: 10px;
+  width: 100px;
+}
+
+img {
+  display: block;
+  max-width:90px;
+  max-height:90px;
+  width: auto;
+  height: auto;
 }
 
 .machineHolder {
   float: left;
-  width: 30%;
+  width: 60%;
   height: 50px;
   padding-bottom: 10px;
+  text-align: left;
+  font-weight: 700;
 }
 
 .statusHolder {
-  float: none;
-  width: 30%;
+  float: right;
+  width: 20%;
+  text-align: right;
   height: 50px;
   padding-bottom: 10px;
+  padding-right: 20px;
+  font-size: 50px;
+  font-weight: 900;
 }
 
 .subtextHolder {
-  float: right;
-  width: 30%;
+  float: none;
   height: 50px;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 20px
 }
 </style>

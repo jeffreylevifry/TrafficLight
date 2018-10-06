@@ -43,6 +43,10 @@
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Niramit|Oswald');
+
+
     body {
         background-color: #F0F0F0;
     }
@@ -55,5 +59,13 @@
     #app {
         width: 1024px;
         margin: auto;
+       text-transform: uppercase;
+          font-family: 'Oswald', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 35px;
     }
 </style>

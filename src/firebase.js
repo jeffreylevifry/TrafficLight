@@ -1,9 +1,7 @@
 import Firebase from "firebase";
 import "firebase/firestore";
 
-const firebaseApp = Firebase.initializeApp({
-  // Initialize Firebase
-});
+const firebaseApp = Firebase.initializeApp({});
 
 const db = firebaseApp.database();
 const sfBg = db.ref("lanes/sf/backgroundColor");
