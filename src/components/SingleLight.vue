@@ -3,11 +3,11 @@
     <div class="imageHolder"><img v-bind:src=image /> </div> 
         <div class="machineHolder">{{ machine }} </div>
         <div class="buttonHolder">
-        <button v-on:click="$emit('change-color', '#00b058')">Green</button>
-        <button v-on:click="$emit('change-color', '#ffff00')">Yellow</button>
-        <button v-on:click="$emit('change-color', 'red')">Red</button>
-        <button v-on:click="$emit('change-color', '#3fa9f5')">Blue</button>
-        <button v-on:click="$emit('change-color', 'lightgrey')">Offline</button>
+        <button id="lite" v-on:click="$emit('change-color', '#00b058')">LITE</button>
+        <button id="medium" v-on:click="$emit('change-color', '#ffff00')">MEDIUM</button>
+        <button id="heavy" v-on:click="$emit('change-color', 'red')">HEAVY</button>
+        <button id="special" v-on:click="$emit('change-color', '#3fa9f5')">SPECIAL</button>
+        <button id="offline" v-on:click="$emit('change-color', 'lightgrey')">OFFLINE</button>
         </div>
         <div class="statusHolder">{{ status }}</div>
     </div>
@@ -48,6 +48,21 @@ img {
   width: auto;
   height: auto;
 }
+#lite{
+  background-color:#00b058;
+}
+#medium{
+  background-color:#ffff00;
+}
+#heavy{
+  background-color:red;
+}
+#special{
+  background-color:#3fa9f5;
+}
+#offline{
+  background-color:lightgrey;
+}
 button{
   border: none;
   margin-left:10px;
@@ -67,9 +82,13 @@ button{
 }
 .machineHolder {
   float: left;
-  width: 15%;
-  height: 50px;
+  width: 25%;
+  text-align: left;
+  height: 70px;
+  letter-spacing:0px;
+  margin-top: 17px;
   padding-bottom: 10px;
+  font-size: 37px;
 }
 .statusHolder {
   float: left;

@@ -3,23 +3,23 @@
     
         <SingleLightFront id="SmallFormat" 
         image="http://jeffreylevifry.com/TrafficLight/assets/TL_SF_ICON.svg" 
-        :status="sfstatus" machine="Small Format" subtext="Small Format"
+        :status="sfstatus" machine="Small Format" subtext="POSTCARDS, BUSINESS CARDS, BOOKS, BINDERS; 8.5 x 11, 11 x 17, 12x18"
          v-bind:style="{ backgroundColor: sf.backgroundColor }"></SingleLightFront>
          
         <SingleLightFront id="6100"  image='http://jeffreylevifry.com/TrafficLight/assets/TL_HP6100_ICON.svg' 
-        :status="hpzstatus" machine="HP z6100" subtext="Large Format" 
+        :status="hpzstatus" machine="HP z6100" subtext="LARGE FORMAT PRINTS; POSTERS, PRINT AND MOUNT" 
         v-bind:style="{ backgroundColor: hpz.backgroundColor }"></SingleLightFront>
 
         <SingleLightFront id="360" image='http://jeffreylevifry.com/TrafficLight/assets/TL_360_ICON.svg' 
-        :status="latexstatus" machine="HP 360 Latex" subtext="Large Format Outdoor"
+        :status="latexstatus" machine="HP 360 Latex" subtext="BANNERS, ADHESIVE VINYL WALL GRAPHICS, CAR GRAPHICS"
         v-bind:style="{ backgroundColor: latex.backgroundColor }"></SingleLightFront>
 
         <SingleLightFront id="Flatbed" image="http://jeffreylevifry.com/TrafficLight/assets/TL_350_ICON.svg"
-        :status="flatbedstatus" machine="Flatbed" subtext="Flatbed" 
+        :status="flatbedstatus" machine="Flatbed" subtext="DIRECT TO FOAMCORE, SINTRA, DIBOND, VARIOUS SUBSTRATES" 
         v-bind:style="{ backgroundColor: flatbed.backgroundColor }"></SingleLightFront>
 
         <SingleLightFront id="Finishing" image="http://jeffreylevifry.com/TrafficLight/assets/TL_FINISHING_ICON.svg"
-        :status="finishingstatus" machine="Finishing" subtext="Finishing" 
+        :status="finishingstatus" machine="Finishing" subtext="MOUNTING, LAMINATION ZUND CUTTING" 
         v-bind:style="{ backgroundColor: finishing.backgroundColor }"></SingleLightFront>
         </div>
     </template>

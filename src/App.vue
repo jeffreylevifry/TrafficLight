@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <div id=" test"><h1>Traffic Light</h1></div>
-        <nav>
+        <div id=" test"><h2>Traffic Light</h2><h3>417 North 8th Street</h3></div>
+        <nav v-if="['login', 'register'].indexOf($route.name) > -1">
             <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
             <router-link to="/frontEnd">FRONT VIEW</router-link>
         </nav>
@@ -44,16 +44,25 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Niramit|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Oswald');
 
 
     body {
         background-color: #F0F0F0;
     }
 
-    h1 {
+    h2 {
+      letter-spacing: 6px;
+      font-size: 60px;
         padding: 0;
         margin-top: 0;
+        margin-bottom:0;
+        font-weight:900;
+    }
+    h3{
+      font-size:13px;
+      margin-top:4px;
+      letter-spacing: 14px;
     }
 
     #app {
@@ -66,6 +75,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 35px;
+  margin-top: 15px;
     }
 </style>

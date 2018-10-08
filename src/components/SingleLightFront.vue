@@ -73,6 +73,6 @@ img {
   padding-bottom: 4px;
   text-align: left;
   font-weight: 500;
-  font-size: 20px
+  font-size: 14px
 }
 </style>
