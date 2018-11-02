@@ -75,4 +75,46 @@ img {
   font-weight: 500;
   font-size: 14px
 }
+
+@media screen and (max-width: 900px) {
+
+.singleLightFront{
+  font-size: 15px;
+}
+.imageHolder {
+  width:40px;
+  height:auto;
+  padding:5px;
+}
+img {
+  display: block;
+  max-width:40px;
+  max-height:40px;
+  width: auto;
+  height: auto;
+}
+.machineHolder {
+  font-size:20px;
+  width:60%;
+}
+.statusHolder {
+  font-size:20px;
+}
+.subtextHolder {
+  font-size:6px;
+  height: 39px;
+}
+@media screen and (max-width: 450px) {
+  .subtextHolder {
+  font-size:12px;
+  height: 39px;
+}
+.machineHolder {
+  width:60%;
+}
+.statusHolder{
+  font-size:24px;
+}
+}
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="login">
-        <h1>Login</h1>
+        <h1>OPERATOR LOGIN</h1>
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
         <button type="button" v-on:click="login()">Login</button>
@@ -8,6 +8,9 @@
 </template>
 
 <script>
+
+//import {popup} from '../components/popUp.vue';
+
 export default {
   name: "Login",
   data() {
@@ -44,7 +47,19 @@ export default {
   border: 1px solid #cccccc;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 100px;
   padding: 20px;
+}
+
+@media screen and (max-width: 600px)  {
+  #login {
+  width: 200px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+  
 }
 </style>

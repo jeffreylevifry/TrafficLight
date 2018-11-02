@@ -111,10 +111,11 @@ export default {
 </script>
 
 <style scoped>
+
 #secure {
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  padding: 20px;
+  padding: 10px;
   margin-top: 10px;
 }
 </style>

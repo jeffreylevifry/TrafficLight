@@ -88,11 +88,9 @@ export default {
       var grey = "lightgrey";
       var green = "#00b058";
       var yellow = "#ffff00";
-      console.log("color = "+color);
       if(str1.localeCompare(red)===0){ //red
         return "HEAVY";
       }if(str1.localeCompare(blue)===0){ //blue
-      console.log(str1);
         return "SPECIAL";
       }if(str1.localeCompare(grey)===0){
         return "OFFLINE";
@@ -138,10 +136,20 @@ export default {
 
 </script>
 
-<style scoped > #frontEnd {
+<style scoped > 
+
+#frontEnd {
         background - color: #ffffff;
         border: 1 px solid# cccccc;
         padding: 20 px;
         margin - top: 10 px;
-    } <
-    /style>
+    } 
+    @media screen and (max-width: 700px) {
+
+      #frontEnd{
+        width:100%;
+        
+        }
+    }
+
+    </style>

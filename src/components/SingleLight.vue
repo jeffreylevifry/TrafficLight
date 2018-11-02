@@ -91,6 +91,7 @@ button{
   font-size: 37px;
 }
 .statusHolder {
+  display:none;
   float: left;
   width: 33px;
   text-align: right;
@@ -107,4 +108,66 @@ button{
   height: 60px;
   padding-bottom: 10px;
 }
+
+@media screen and (max-width: 900px) {
+  button{
+  margin-left:5px;
+  font-size: 10px;
+  font-weight:900;
+  width:40px;
+  height:40px;
+}
+
+.singleLightFront{
+  font-size: 16px;
+}
+.imageHolder {
+  width:50px;
+  height:auto;
+  padding:5px;
+}
+img {
+  display: block;
+  max-width:50px;
+  max-height:50px;
+  width: auto;
+  height: auto;
+}
+.machineHolder {
+  font-size:19px;
+  width:70%;
+  height:22%;
+  margin-top:5px;
+}
+.statusHolder {
+  display:none;
+}
+.subtextHolder {
+  font-size:6px;
+  height: 39px;
+}
+.buttonHolder{
+  margin-left:29px;
+  width:85%;
+  height:40%;
+  margin: 0px;
+}
+
+
+
+}
+@media screen and (max-width: 450px) {
+  .machineHolder {
+  font-size:19px;
+  }
+
+  .buttonHolder{
+  margin-left:0px;
+  width:80%;
+  height:40%;
+  margin: 0px;
+}
+
+}
+
 </style>
