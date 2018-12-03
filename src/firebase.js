@@ -9,5 +9,6 @@ const hpzBg = db.ref("lanes/hpz/backgroundColor");
 const latexBg = db.ref("lanes/latex/backgroundColor");
 const flatbedBg = db.ref("lanes/flatbed/backgroundColor");
 const finishingBg = db.ref("lanes/finishing/backgroundColor");
+const lfbwBg = db.ref("lanes/lfbw/backgroundColor");
 
-export { db, sfBg, hpzBg, latexBg, flatbedBg, finishingBg };
+export { db, sfBg, hpzBg, latexBg, flatbedBg, finishingBg, lfbwBg };
