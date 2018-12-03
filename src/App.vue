@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <img
-      id="logo-holder"
-      src="http://jeffreylevifry.com/TrafficLight/assets/traffic-light-logo.svg"
-    />
+    <img id="logo-holder" src="./assets/traffic-light-logo.svg" />
     <h3>417 North 8th Street</h3>
 
     <nav id="nav-front" v-if="['login', 'register'].indexOf($route.name) > -1">
