@@ -1,27 +1,7 @@
-# test-project
+# Traffic Light
 
-> A Vue.js project
+> Visual production management solution for controlling workflow and anticipating bottlenecks.
 
-## Build Setup
+## Background
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+> The print and production end of ARC was having trouble with taking orders / input and managing a reasonable workload between multiple departments. Traffic Light uses a simple color-coded system to indicate how much work is currently in-house and provides ordertakers and salesmen a quick, easy and responsive visual guide to how busy production is in order to give an accurate turnaround estimate.

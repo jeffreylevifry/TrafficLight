@@ -1,7 +1,14 @@
 import Firebase from "firebase";
 import "firebase/firestore";
 
-const firebaseApp = Firebase.initializeApp({});
+const firebaseApp = Firebase.initializeApp({
+  apiKey: "AIzaSyBjrkzgTVZyNcrA2KrzTQ-wsBKwlOnSBcM",
+  authDomain: "traffic-light-e5086.firebaseapp.com",
+  databaseURL: "https://traffic-light-e5086.firebaseio.com",
+  projectId: "traffic-light-e5086",
+  storageBucket: "traffic-light-e5086.appspot.com",
+  messagingSenderId: "892280357071"
+});
 
 const db = firebaseApp.database();
 const sfBg = db.ref("lanes/sf/backgroundColor");
