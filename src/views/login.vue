@@ -1,19 +1,21 @@
 <template>
   <div id="login">
     <h1>OPERATOR LOGIN</h1>
-    <input
-      type="text"
-      name="username"
-      v-model="input.username"
-      placeholder="Username"
-    />
-    <input
-      type="password"
-      name="password"
-      v-model="input.password"
-      placeholder="Password"
-    />
-    <button type="button" v-on:click="login();">Login</button>
+    <div id="input-login-holder">
+      <input
+        type="text"
+        name="username"
+        v-model="input.username"
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        v-model="input.password"
+        placeholder="Password"
+      />
+      <button type="button" v-on:click="login();">Login</button>
+    </div>
   </div>
 </template>
 
@@ -52,22 +54,19 @@ export default {
 
 <style scoped>
 #login {
-  width: 500px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  margin: auto;
-  margin-top: 100px;
-  padding: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 2% auto auto auto;
+}
+#input-login-holder input {
+  width: 70%;
+  margin: 1% auto 1% auto;
+  display: block;
+}
+#input-login-holder button {
+  margin: 5px;
 }
 
 @media screen and (max-width: 600px) {
-  #login {
-    width: 200px;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
-  }
 }
 </style>

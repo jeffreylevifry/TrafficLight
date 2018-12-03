@@ -1,12 +1,12 @@
-
 <template>
-    <div class="singleLightFront">
-    <div class="imageHolder"><img v-bind:src=image /> </div>    
-        <div class="machineHolder">{{ machine }} <div class="subtextHolder">{{subtext}} </div></div>
-        <div class="statusHolder">
-            {{ status }}
-        </div>
+  <div class="singleLightFront">
+    <div class="imageHolder"><img v-bind:src="image" /></div>
+    <div class="machineHolder">
+      {{ machine }}
+      <div class="subtextHolder">{{ subtext }}</div>
     </div>
+    <div class="statusHolder">{{ status }}</div>
+  </div>
 </template>
 
 <script>
@@ -33,7 +33,7 @@ export default {
   color: black;
 }
 
-.imageHolder{
+.imageHolder {
   float: left;
   padding-left: 10px;
   width: 100px;
@@ -41,8 +41,8 @@ export default {
 
 img {
   display: block;
-  max-width:90px;
-  max-height:90px;
+  max-width: 90px;
+  max-height: 90px;
   width: auto;
   height: auto;
 }
@@ -73,48 +73,47 @@ img {
   padding-bottom: 4px;
   text-align: left;
   font-weight: 500;
-  font-size: 14px
+  font-size: 14px;
 }
 
 @media screen and (max-width: 900px) {
-
-.singleLightFront{
-  font-size: 15px;
-}
-.imageHolder {
-  width:40px;
-  height:auto;
-  padding:5px;
-}
-img {
-  display: block;
-  max-width:40px;
-  max-height:40px;
-  width: auto;
-  height: auto;
-}
-.machineHolder {
-  font-size:20px;
-  width:60%;
-}
-.statusHolder {
-  font-size:20px;
-}
-.subtextHolder {
-  font-size:6px;
-  height: 39px;
-}
-@media screen and (max-width: 450px) {
+  .singleLightFront {
+    font-size: 15px;
+  }
+  .imageHolder {
+    width: 40px;
+    height: auto;
+    padding: 5px;
+  }
+  img {
+    display: block;
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+  }
+  .machineHolder {
+    font-size: 20px;
+    width: 60%;
+  }
+  .statusHolder {
+    font-size: 20px;
+  }
   .subtextHolder {
-  font-size:12px;
-  height: 39px;
-}
-.machineHolder {
-  width:60%;
-}
-.statusHolder{
-  font-size:24px;
-}
-}
+    font-size: 6px;
+    height: 39px;
+  }
+  @media screen and (max-width: 450px) {
+    .subtextHolder {
+      font-size: 12px;
+      height: 39px;
+    }
+    .machineHolder {
+      width: 60%;
+    }
+    .statusHolder {
+      font-size: 24px;
+    }
+  }
 }
 </style>

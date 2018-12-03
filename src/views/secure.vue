@@ -168,9 +168,9 @@ export default {
 
 <style scoped>
 #secure {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  padding: 10px;
-  margin-top: 10px;
+  background-color: #e9e9e9;
+  //border: 1px solid #cccccc;
+  padding: 8px;
+  margin: 15px 0px 0px 0px;
 }
 </style>

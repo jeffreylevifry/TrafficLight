@@ -37,11 +37,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.singleLight {
-  font-size: 24px;
-  font-weight: 900;
-  color: black;
-}
 .imageHolder {
   float: left;
   padding-left: 10px;
@@ -83,9 +78,13 @@ button {
 }
 
 .singleLight {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  background-color: #e4e4e4;
   height: 100px;
+  font-size: 1.1em;
+  color: black;
 }
 .machineHolder {
   float: left;
@@ -120,8 +119,8 @@ button {
     margin-left: 5px;
     font-size: 10px;
     font-weight: 900;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 
   .singleLightFront {

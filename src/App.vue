@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img id="logo-holder" src="./assets/traffic-light-logo.svg" />
+    <img
+      id="logo-holder"
+      src="http://www.jeffreylevifry.com/TrafficLight/assets/traffic-light-logo.svg"
+    />
     <h3>417 North 8th Street</h3>
 
     <nav id="nav-front" v-if="['login', 'register'].indexOf($route.name) > -1">
@@ -51,8 +54,18 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Oswald");
 
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
-  background-color: #f0f0f0;
+  height: 100%;
+  background-color: #f6f6f6;
+  /*
+  background-image: url("http://www.jeffreylevifry.com/TrafficLight/assets/tlight.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  */
 }
 
 h2 {
@@ -64,24 +77,31 @@ h2 {
   font-weight: 900;
 }
 h3 {
-  font-size: 12px;
-  margin-top: 2px;
+  font-size: 13px;
+  margin: 0px 0px 2px 0px;
   letter-spacing: 5px;
 }
 #logo-holder {
-  max-width: 33%;
+  max-width: 42%;
+}
+
+a {
+  color: #2c3e50;
+  font-weight: 900;
 }
 
 #app {
-  width: 80%;
-  margin: auto;
+  width: 90%;
+  height: 100%;
+  margin: auto auto auto auto;
+  padding: 1% %4 1% 4%;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 7px;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 a {
@@ -89,18 +109,16 @@ a {
 }
 
 #frontview {
-  width: 500px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  margin: auto;
-  margin-top: 100px;
-  padding: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 2% auto auto auto;
 }
 
 #nav-front {
   margin: auto;
   text-align: center;
   font-size: 30px;
+  border: none;
 }
 #title {
   display: inline;
@@ -117,20 +135,14 @@ a {
     line-height: 69px;
   }
   #frontview {
-    width: 200px;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
   }
   #app {
-    width: 90%;
+    width: 95%;
   }
 
   @media screen and (max-width: 900px) {
     #app {
-      width: 90%;
+      width: 94%;
     }
   }
 }
