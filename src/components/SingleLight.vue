@@ -113,14 +113,31 @@ button {
   height: 60px;
   padding-bottom: 10px;
 }
+@media screen and (max-width: 1450px) {
+  button {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 900;
+    width: 65px;
+    height: 65px;
+  }
+  .machineHolder {
+    width: 30%;
+    font-size: 28px;
+  }
+  .imageHolder {
+    width: 55px;
+    padding: 10px;
+  }
+}
 
 @media screen and (max-width: 900px) {
   button {
     margin-left: 5px;
     font-size: 10px;
     font-weight: 900;
-    width: 38px;
-    height: 38px;
+    width: 41px;
+    height: 41px;
   }
 
   .singleLightFront {

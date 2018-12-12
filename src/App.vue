@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-    <img
-      id="logo-holder"
-      src="http://www.jeffreylevifry.com/TrafficLight/assets/traffic-light-logo.svg"
-    />
+    <a href="./">
+      <img
+        id="logo-holder"
+        src="http://www.jeffreylevifry.com/TrafficLight/assets/traffic-light-logo.svg"
+      />
+    </a>
     <h3>417 North 8th Street</h3>
-
-    <nav id="nav-front" v-if="['login', 'register'].indexOf($route.name) > -1">
-      <router-link
-        v-if="authenticated"
-        to="/login"
-        v-on:click.native="logout();"
-        replace
-        >Logout</router-link
+    <div id="splash-page-holder">
+      <nav
+        id="nav-front"
+        v-if="['login', 'register'].indexOf($route.name) > -1"
       >
-      <router-link to="/frontEnd"
-        ><div id="frontview">STATUS VIEW</div></router-link
-      >
-    </nav>
-    <router-view @authenticated="setAuthenticated" />
+        <router-link
+          v-if="authenticated"
+          to="/login"
+          v-on:click.native="logout();"
+          replace
+          >Logout</router-link
+        >
+        <router-link to="/frontEnd"
+          ><div id="frontview">VIEW PRODUCTION STATUS</div></router-link
+        >
+      </nav>
+      <router-view @authenticated="setAuthenticated" />
+    </div>
   </div>
 </template>
 
@@ -30,8 +36,8 @@ export default {
       isFrontEnd: true,
       authenticated: false,
       mockAccount: {
-        username: "1",
-        password: "1"
+        username: "",
+        password: ""
       }
     };
   },
@@ -61,13 +67,17 @@ html {
 body {
   height: 100%;
   background-color: #f6f6f6;
-  /*
-  background-image: url("http://www.jeffreylevifry.com/TrafficLight/assets/tlight.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  */
-}
 
+  background-image: url("http://www.jeffreylevifry.com/TrafficLight/assets/traffic_gradient_blue.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+#splash-page-holder {
+  margin-top: 8%;
+  margin-bottom: 8%;
+  background-color: rgba(255, 255, 255, 0.73);
+  padding: 10px;
+}
 h2 {
   letter-spacing: 7px;
   font-size: 45px;
@@ -91,9 +101,9 @@ a {
 }
 
 #app {
-  width: 90%;
+  width: 77%;
   height: 100%;
-  margin: auto auto auto auto;
+  margin: 5% auto auto auto;
   padding: 1% %4 1% 4%;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
@@ -110,7 +120,7 @@ a {
 
 #frontview {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.05);
   margin: 2% auto auto auto;
 }
 
@@ -132,18 +142,35 @@ a {
   }
   h2 {
     letter-spacing: 2px;
-    line-height: 69px;
+    line-height: 60px;
   }
   #frontview {
   }
   #app {
+    margin: 0 px 0 px 0 px 0 px;
     width: 95%;
   }
 
-  @media screen and (max-width: 900px) {
-    #app {
-      width: 94%;
-    }
+  #logo-holder {
+    max-width: 85%;
+    margin-top: 10px;
+  }
+  #splash-page-holder {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  h2 {
+    letter-spacing: 2px;
+    line-height: 60px;
+  }
+  #app {
+    margin: 0 px 0 px 0 px 0 px;
+    width: 94%;
+  }
+  #splash-page-holder {
+    margin-top: 5%;
   }
 }
 </style>

@@ -71,17 +71,6 @@ export default {
     SingleLight
   },
 
-  data() {
-    return {
-      sf: { backgroundColor: "" },
-      hpz: { backgroundColor: "" },
-      latex: { backgroundColor: "" },
-      flatbed: { backgroundColor: "" },
-      finishing: { backgroundColor: "" },
-      lfbw: { backgroundColor: "" }
-    };
-  },
-
   methods: {
     changeSF: function(newColor) {
       this.$data.sf.backgroundColor = newColor;
@@ -162,6 +151,25 @@ export default {
         return "ERROR";
       }
     }
+  },
+  created() {
+    this.changeSF();
+    this.change6100();
+    this.change360();
+    this.changeFinishing();
+    this.changeFlatbed();
+    this.changeLfbw();
+  },
+
+  data() {
+    return {
+      sf: { backgroundColor: "" },
+      hpz: { backgroundColor: "" },
+      latex: { backgroundColor: "" },
+      flatbed: { backgroundColor: "" },
+      finishing: { backgroundColor: "" },
+      lfbw: { backgroundColor: "" }
+    };
   }
 };
 </script>
@@ -171,6 +179,11 @@ export default {
   background-color: #e9e9e9;
   //border: 1px solid #cccccc;
   padding: 8px;
-  margin: 15px 0px 0px 0px;
+}
+
+@media screen and (max-width: 700px) {
+  #secure {
+    width: 100%;
+  }
 }
 </style>

@@ -7,21 +7,21 @@
         name="username"
         v-model="input.username"
         placeholder="Username"
+        v-on:keyup.enter="login"
       />
       <input
         type="password"
         name="password"
         v-model="input.password"
         placeholder="Password"
+        v-on:keyup.enter="login"
       />
-      <button type="button" v-on:click="login();">Login</button>
+      <button type="button" v-on:click="login">Login</button>
     </div>
   </div>
 </template>
 
 <script>
-//import {popup} from '../components/popUp.vue';
-
 export default {
   name: "Login",
   data() {
@@ -55,11 +55,11 @@ export default {
 <style scoped>
 #login {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.05);
   margin: 2% auto auto auto;
 }
 #input-login-holder input {
-  width: 70%;
+  width: 50%;
   margin: 1% auto 1% auto;
   display: block;
 }
@@ -67,6 +67,19 @@ export default {
   margin: 5px;
 }
 
+#login input {
+  padding: 2 px;
+  margin: 10px auto 10px auto;
+}
+
 @media screen and (max-width: 600px) {
+  #input-login-holder input {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #input-login-holder input {
+    width: 70%;
+  }
 }
 </style>
