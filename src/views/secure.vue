@@ -63,6 +63,12 @@
 <script>
 import SingleLight from "../components/SingleLight.vue";
 import { db } from "../firebase";
+import { sfBg } from "../firebase";
+import { hpzBg } from "../firebase";
+import { latexBg } from "../firebase";
+import { flatbedBg } from "../firebase";
+import { finishingBg } from "../firebase";
+import { lfbwBg } from "../firebase";
 
 export default {
   name: "Secure",
@@ -72,6 +78,40 @@ export default {
   },
 
   methods: {
+    setColors: function() {
+      var self = this;
+      sfBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.sf.backgroundColor = color1;
+        self.sfstatus = self.getStatus(color1);
+      });
+      hpzBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.hpz.backgroundColor = color1;
+        self.hpzstatus = self.getStatus(color1);
+      });
+      latexBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.latex.backgroundColor = color1;
+        self.latexstatus = self.getStatus(color1);
+      });
+      flatbedBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.flatbed.backgroundColor = color1;
+        self.flatbedstatus = self.getStatus(color1);
+      });
+      finishingBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.finishing.backgroundColor = color1;
+        self.finishingstatus = self.getStatus(color1);
+      });
+      lfbwBg.on("value", function(snapshot) {
+        var color1 = snapshot.val();
+        self.lfbw.backgroundColor = color1;
+        self.lfbwstatus = self.getStatus(color1);
+      });
+    },
+
     changeSF: function(newColor) {
       this.$data.sf.backgroundColor = newColor;
       var newStatus = this.getStatus(newColor);
@@ -153,16 +193,17 @@ export default {
     }
   },
   created() {
-    this.changeSF();
-    this.change6100();
-    this.change360();
-    this.changeFinishing();
-    this.changeFlatbed();
-    this.changeLfbw();
+    this.setColors();
   },
 
   data() {
     return {
+      sfstatus: "",
+      hpzstatus: "",
+      latexstatus: "",
+      lfbwstatus: "",
+      flatbedstatus: "",
+      finishingstatus: "",
       sf: { backgroundColor: "" },
       hpz: { backgroundColor: "" },
       latex: { backgroundColor: "" },
